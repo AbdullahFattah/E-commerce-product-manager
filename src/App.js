@@ -1,19 +1,17 @@
-import './App.css';
 
+import "./App.css";
+import Home from "./components/home";
+import AddProduct from "./components/add-product";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import React from "react";
 function App() {
   return (
-    <>
-    <nav>
-    <h1 className='text-center text-info'>Products</h1>
-    <div className='buttons'>
-    <button className='btn btn-info' id='add'>Add products</button>
-    <button className='btn btn-info' id='delete'>Delete selected</button>
-    </div>
-    </nav>
-    <br></br>
-    <hr></hr>
-    <h1>Some text</h1>
-    </>
+   <Router>
+    <Routes>
+    <Route path="/" element={<Home />}></Route>
+    <Route path="/add-product" element={<AddProduct/>}></Route>
+    </Routes>
+    </Router>
   );
 }
 
