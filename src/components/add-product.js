@@ -39,15 +39,15 @@ function AddProduct(){
         </div>
   <div className="form-group">
     <label className="m-2">SKU</label>
-    <input type="text" className="form-control" value={sku} onChange={e=>handleChange(e)} name="sku" id="sku" placeholder="Enter SKU"></input>
+    <input type="text" className="form-control" value={sku} onChange={e=>handleChange(e)} name="sku" id="sku" placeholder="Enter SKU" required></input>
   </div>
   <div className="form-group">
     <label className="m-2">Name</label>
-    <input type="text" className="form-control" value={name} onChange={e=>handleChange(e)} name="name" id="name" placeholder="Enter product name"></input>
+    <input type="text" className="form-control" value={name} onChange={e=>handleChange(e)} name="name" id="name" placeholder="Enter product name" required></input>
   </div>
   <div className="form-group">
     <label className="m-2">Price</label>
-    <input type="number" className="form-control" value={price} onChange={e=>handleChange(e)} name="price" id="price" placeholder="Enter product price"></input>
+    <input type="number" className="form-control" value={price} onChange={e=>handleChange(e)} name="price" id="price" placeholder="Enter product price" required></input>
   </div>
   {/* <div className="form-group"> */}
     {/* <label className="m-2">Type</label> */}

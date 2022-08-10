@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
 import axios from 'axios'
 import React,{useState, useEffect} from "react";
+import ProductRow from "./product-row";
 function Home(){
         const [product,setProduct]=useState([]);
         
@@ -23,8 +24,15 @@ function Home(){
               productSkus.push(p.sku)
             }
           })
- 
-          console.log(productSkus)
+          productSkus.forEach((sku)=>{
+            axios.delete("http://localhost:8080/products-backend/delete-products.php",{data:{sku:sku}})
+            .then((data)=>{
+              console.log(data)
+              loadProducts();
+            })
+            console.log(productSkus)
+          })
+          // axios.delete("http://localhost:8080/products-backend/delete-products.php","testsku")
         }
     return(
     <>
@@ -44,7 +52,8 @@ function Home(){
       <div className="container">
         <div className="row gy-3">
             {/* Mapping through database product entries */}
-           {product.map(product=>(
+           <ProductRow product={product} setProduct={setProduct}/>
+           {/* {product.map(product=>(
           <div className="col-md-3" key={product.sku}>
             <div className="card">
               <div className="card-body">
@@ -63,7 +72,7 @@ function Home(){
               </div>
             </div>
           </div>
-           ))}
+           ))} */}
 
         </div>
       </div>
