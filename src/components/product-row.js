@@ -1,6 +1,15 @@
 import React from "react";
-
 function ProductRow(props) {
+
+
+  
+  const showSpecs = (size, height, width, length, weight)=>{
+   if(size>0){return "Size: "+size+" MB"}
+   if(height>0 && width>0 && length>0){return("Dimensions: "+height +"x"+ width+"x"+ length)}
+   if(weight>0){return "Weight: "+weight+" KG"}
+   
+  }
+
   return props.product.map((product) => (
     <div className="col-md-3" key={product.sku}>
       <div className="card">
@@ -21,8 +30,8 @@ function ProductRow(props) {
             className="delete-checkbox"
           ></input>
           <h5 className="card-title">{product.name}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{product.sku}</h6>
-          <p className="card-text">Size:{product.size}<br></br> Dimensions:{product.height}x{product.width}x{product.length}<br></br> weight:{product.weight}</p>
+          <h6 className="card-subtitle mb-2 text-muted">#{product.sku}</h6>
+          <p className="card-text">{showSpecs(product.size,product.height,product.width,product.length,product.weight)}</p>
           <p className="card-text">${product.price}</p>
         </div>
       </div>

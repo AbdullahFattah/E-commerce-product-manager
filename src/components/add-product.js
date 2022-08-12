@@ -18,7 +18,7 @@ function AddProduct() {
     typeState === "furniture" ? setFurniture(true) : setFurniture(false);
     typeState === "book" ? setBook(true) : setBook(false);
 
-  })
+  },[typeState])
 
   const handleTypeChange = (e)=>{
     setTypeState(e.target.value)
