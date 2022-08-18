@@ -41,7 +41,8 @@ function AddProduct() {
     console.log(product);
 
     await axios.post(
-      "http://localhost:8080/products-backend/insert.php",
+      // Changed directory -(products-backend)
+      "http://localhost:4000/insert.php",
       product
     );
     navigate("/");

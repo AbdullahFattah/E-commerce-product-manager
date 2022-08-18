@@ -11,7 +11,8 @@ function Home() {
 
   const loadProducts = async () => {
     const result = await axios.get(
-      "http://localhost:8080/products-backend/view-products.php"
+      // Directory changed
+      "http://localhost:4000/view_products.php"
     );
     setProduct(result.data.records);
     // console.log(result)
@@ -26,7 +27,7 @@ function Home() {
     });
     productSkus.forEach((sku) => {
       axios
-        .delete("http://localhost:8080/products-backend/delete-products.php", {
+        .delete("http://localhost:4000/delete.php", {
           data: { sku: sku },
         })
         .then((data) => {
@@ -49,7 +50,7 @@ function Home() {
             onClick={() => {
               handleDelete();
             }}
-            id="delete"
+            id="delete-product-btn"
           >
             MASS DELETE
           </a>
