@@ -10,7 +10,7 @@
 
 ### MySQL
 
-### PHP for API
+### OOP PHP for API
 
 ### SASS
 
