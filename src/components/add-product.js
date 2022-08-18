@@ -38,7 +38,7 @@ function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (typeState !== "default" && typeState !== undefined) {
-      await axios.post("https://sc4ndiw3b.herokuapp.com/insert.php", product);
+      await axios.post("https://****.herokuapp.com/insert.php", product);
       navigate("/");
     } else {
       setSelectMessage(

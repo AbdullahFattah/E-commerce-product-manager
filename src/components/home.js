@@ -11,7 +11,7 @@ function Home() {
 
   const loadProducts = async () => {
     const result = await axios.get(
-      "https://sc4ndiw3b.herokuapp.com/view_products.php"
+      "https://****.herokuapp.com/view_products.php"
     );
     setProduct(result.data.records);
   };
@@ -25,7 +25,7 @@ function Home() {
     });
     productSkus.forEach((sku) => {
       axios
-        .delete("https://sc4ndiw3b.herokuapp.com/delete.php", {
+        .delete("https://****.herokuapp.com/delete.php", {
           data: { sku: sku },
         })
         .then(() => {
