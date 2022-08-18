@@ -11,11 +11,9 @@ function Home() {
 
   const loadProducts = async () => {
     const result = await axios.get(
-      // Directory changed
-      "http://localhost:4000/view_products.php"
+      "https://sc4ndiw3b.herokuapp.com/view_products.php"
     );
     setProduct(result.data.records);
-    // console.log(result)
   };
 
   const handleDelete = () => {
@@ -27,24 +25,23 @@ function Home() {
     });
     productSkus.forEach((sku) => {
       axios
-        .delete("http://localhost:4000/delete.php", {
+        .delete("https://sc4ndiw3b.herokuapp.com/delete.php", {
           data: { sku: sku },
         })
-        .then((data) => {
-          console.log(data);
+        .then(() => {
           loadProducts();
         });
-      console.log(productSkus);
     });
   };
   return (
     <>
       <nav>
-        <h1 className="text-center text-info">Products</h1>
+        <h1 className="text-center">Products</h1>
         <div className="buttons">
           <Link to="add-product" className="btn btn-success" id="add">
             ADD
           </Link>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a
             className="btn btn-danger"
             onClick={() => {

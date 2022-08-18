@@ -4,6 +4,7 @@ export default function Furniture(props) {
       <label className="mt-3">Height</label>
       <input
         type="number"
+        min={1}
         id="height"
         value={props.height}
         onChange={(e) => props.handleChange(e)}
@@ -15,6 +16,7 @@ export default function Furniture(props) {
       <label className="mt-1">Width</label>
       <input
         type="number"
+        min={1}
         id="width"
         value={props.width}
         onChange={(e) => props.handleChange(e)}
@@ -26,6 +28,7 @@ export default function Furniture(props) {
       <label className="mt-1">Length</label>
       <input
         type="number"
+        min={1}
         id="length"
         value={props.length}
         onChange={(e) => props.handleChange(e)}

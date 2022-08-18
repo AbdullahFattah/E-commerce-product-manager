@@ -1,12 +1,23 @@
 
-.head{
-    color: royalblue;
-  }
+$primary:rgb(232,232,232);
+$accent:#3353ac;
+
+body{
+  background: $primary;
+  background: linear-gradient(344deg, rgba(232,232,232,1) 0%, rgba(183,216,244,1) 100%);
+  background-attachment: fixed;
+}
+.prod-card{
+  background-color: $primary;
+}
+h1{
+  color:$accent;
+}
   
-  .btn{
+.btn{
     margin-right: 10px;
-  }
-  .buttons{
+}
+.buttons{
     position: absolute;
     right: 10px;
-  }
+}

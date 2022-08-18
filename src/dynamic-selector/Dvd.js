@@ -4,6 +4,7 @@ export default function Dvd(props) {
       <label className="mt-3">Size</label>
       <input
         type="number"
+        min={1}
         id="size"
         value={props.size}
         onChange={(e) => props.handleChange(e)}

@@ -4,6 +4,7 @@ export default function Book(props) {
       <label className="mt-3">Weight</label>
       <input
         type="number"
+        min={1}
         id="weight"
         value={props.weight}
         onChange={(e) => props.handleChange(e)}
